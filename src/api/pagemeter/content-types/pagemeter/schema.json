@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "pagemeters",
+  "info": {
+    "singularName": "pagemeter",
+    "pluralName": "pagemeters",
+    "displayName": "Pagemeter"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

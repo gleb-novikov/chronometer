@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "chronometers",
+  "info": {
+    "singularName": "chronometer",
+    "pluralName": "chronometers",
+    "displayName": "Chronometer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

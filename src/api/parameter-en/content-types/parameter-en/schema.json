@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "parameter_ens",
+  "info": {
+    "singularName": "parameter-en",
+    "pluralName": "parameter-ens",
+    "displayName": "Parameter EN"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "integer"
+    }
+  }
+}

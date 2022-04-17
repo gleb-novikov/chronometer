@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "statistics",
+  "info": {
+    "singularName": "statistic",
+    "pluralName": "statistics",
+    "displayName": "Statistic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "day": {
+      "type": "biginteger"
+    },
+    "all": {
+      "type": "biginteger"
+    }
+  }
+}

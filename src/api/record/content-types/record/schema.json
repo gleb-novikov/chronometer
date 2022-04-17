@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "records",
+  "info": {
+    "singularName": "record",
+    "pluralName": "records",
+    "displayName": "Record",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "email": {
+      "type": "email"
+    },
+    "time": {
+      "type": "string"
+    },
+    "files_url": {
+      "type": "json"
+    }
+  }
+}
