@@ -8,36 +8,49 @@ module.exports = {
 			} else if (result.files_url != null) {
 				attachments = result.files_url.map(item => {return {path: strapi.config.get('server.url') + item}})
 			}
-			await strapi
-				.plugin('email')
-				.service('email')
-				.send({
-					to: 'glebneko@yandex.ru',
-					from: 'mail5tudio@yandex.ru',
-					subject: 'Hello world',
-					html: `<p>type: ${result.type}</p>
-							<p>sex: ${result.sex}</p>
-							<p>comment: ${result.comment}</p>
-							<p>email: ${result.email}</p>
-							<p>time: ${result.time}</p>`,
-					attachments: attachments
-			});
-			if (result.email != null) {
+
+			const entry = await strapi.entityService.findOne('api::email-setting.email-setting', 1);
+			if (entry.email != null && entry.email.length > 0) {
 				await strapi
-					.plugin('email')
+					.plugin('email-designer')
 					.service('email')
-					.send({
-						to: result.email,
-						from: 'mail5tudio@yandex.ru',
-						subject: 'Hello world',
-						html: `<p>type: ${result.type}</p>
-								<p>sex: ${result.sex}</p>
-								<p>comment: ${result.comment}</p>
-								<p>email: ${result.email}</p>
-								<p>time: ${result.time}</p>`,
-						attachments: attachments
-				});
-			}
+					.sendTemplatedEmail(
+						{
+							to: entry.email,
+							attachments: attachments
+						},
+						{
+							templateReferenceId: 1
+						},
+						{
+							type: result.type,
+							sex: result.sex,
+							comment: result.comment,
+							email: result.email,
+							time: result.time
+						}
+				);
+				if (result.email != null) {
+					await strapi
+						.plugin('email-designer')
+						.service('email')
+						.sendTemplatedEmail(
+							{
+								to: result.email
+							},
+							{
+								templateReferenceId: 2
+							},
+							{
+								type: result.type,
+								sex: result.sex,
+								comment: result.comment,
+								email: result.email,
+								time: result.time
+							}
+					);
+				}
+		}
 		} catch (err) {
 			console.log(err);
 		}

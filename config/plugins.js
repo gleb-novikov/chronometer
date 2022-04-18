@@ -1,5 +1,4 @@
 module.exports = ({ env }) => ({
-  // ...
   email: {
     config: {
       provider: 'nodemailer',
@@ -11,13 +10,11 @@ module.exports = ({ env }) => ({
           user: env('SMTP_USERNAME'),
           pass: env('SMTP_PASSWORD'),
         },
-        // ... any custom nodemailer options
       },
       settings: {
-        defaultFrom: 'mail5tudio@yandex.ru',
-        defaultReplyTo: 'mail5tudio@yandex.ru',
+        defaultFrom: env('SMTP_USERNAME'),
+        defaultReplyTo: env('SMTP_USERNAME'),
       },
     },
   },
-  // ...
 });
