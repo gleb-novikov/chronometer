@@ -27,7 +27,8 @@ module.exports = {
 							sex: result.sex,
 							comment: result.comment,
 							email: result.email,
-							time: result.time
+							time: result.time,
+							text: result.text
 						}
 				);
 				if (result.email != null) {
@@ -46,7 +47,8 @@ module.exports = {
 								sex: result.sex,
 								comment: result.comment,
 								email: result.email,
-								time: result.time
+								time: result.time,
+								text: result.text
 							}
 					);
 				}

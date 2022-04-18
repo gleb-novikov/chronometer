@@ -40,6 +40,9 @@
     },
     "files_url": {
       "type": "json"
+    },
+    "text": {
+      "type": "text"
     }
   }
 }
